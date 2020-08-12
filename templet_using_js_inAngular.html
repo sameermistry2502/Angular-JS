@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Templet</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.jshttps://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/ng-template" id="views/contact.htm">
+		<h2>this is my contact us page.</h2>
+	</script>
+	<script type="text/ng-template" id="views/about.htm">
+		<h2>this is my about us page.</h2>
+	</script>
+	<script>
+		angular.module("myApp", [])
+		.controller("myCtrl" , function($scope){
+            $scope.templeteUrl = "";
+            $scope.loadTemplete = function(url){
+               $scope.templeteUrl = url;
+            };
+		});
+	</script>
+</head>
+<body ng-controller="myCtrl">
+	<a href="#" ng-click="loadTemplete('resources/about.htm')">About-us</a>   ||  
+	<a href="#" ng-click="loadTemplete('resources/contact.htm')">Contact-us</a>  ||
+	<!--<a href="#" ng-click="loadTemplete('views/registration.htm')">Registration</a>  ||-->
+	<a href="#" ng-click="loadTemplete('resources/login.htm')">Login</a>
+	<hr/>
+	<div ng-include="templeteUrl"></div>
+
+</body>
+</html>

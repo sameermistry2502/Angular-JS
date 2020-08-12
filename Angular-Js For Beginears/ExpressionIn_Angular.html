@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Expression</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		angular.module("myApp",[])
+		.controller("myctrl",function($scope){
+           $scope.student = {
+           	firstname: "",
+           	lastname: "panchal",
+           	rollno: 17,
+           	fullname: function(){
+           		return $scope.student.firstname+" "+
+           		$scope.student.lastname;
+           	}
+           };
+		});
+	</script>
+</head>
+<body ng-controller="myctrl">
+	FIRST NAME : {{student.firstname | uppercase}}<br/>
+	LAST NAME : {{student.lastname | uppercase}}<br/>
+	ROLL NO : {{student.rollno}}<br/>
+	FULL NAME WITH FUNCTION : {{student.fullname()}}<br/>
+	FULL NAME WITHOUT FUNCTION : {{student.firstname+" "+student.lastname}}
+	<br>
+	<hr>
+	DIRECTIVE BIND : <label ng-bind="student.firstname | uppercase"></label>
+	<br>
+	<br>
+	<hr>
+	<input type="text" name="txtModel" id="" ng-model="student.firstname">
+</body>
+</html>

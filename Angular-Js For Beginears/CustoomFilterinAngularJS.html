@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Filter</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		angular.module("myApp",[])
+		.filter("reverse",function(){
+			return function(text,option){
+				text = text || '';
+				var out = '';
+				for(var i=text.length-1; i>=0;i--){
+                    out += text[i];
+				}
+				if(option){
+					if (option.toUpperCase() == 'UPPERCASE') {
+						return out.toUpperCase();
+					}
+				    else if(option.toUpperCase() == 'LOWERCASE'){
+						return out.toLowerCase();
+					}
+				}
+				return out;
+			};
+		});
+	</script>
+</head>
+<body>
+	Enter the Text : <input type="text" name="txtVal" id="" ng-model="msg"/>
+	<br/>
+	<br/>
+	RESULT : {{msg | reverse: 'lowercase'}}
+
+</body>
+</html>

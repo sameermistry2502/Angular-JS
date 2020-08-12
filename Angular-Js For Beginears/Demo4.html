@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Controller-Demo</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+  <script>
+   var app =  angular.module("myApp",[]);
+    app.controller("mycontroller", function($scope){
+      $scope.msg = "I am SAMEER MISTRY.";
+    })
+
+    
+    app.controller("myaccess", function($scope){
+         var friends = [
+     {
+      "Name" : "Sameer Mistry",
+      "Enrollment" : "161203116015",
+      "cgpa" : 8.30
+  },
+  { 
+      "Name" : "Hiral Thaker",
+      "Enrollment" : "161203116033",
+      "cgpa" : 8.88
+  },
+    {
+      "Name" : "Sanjay Yadav",
+      "Enrollment" : "161203116034",
+      "cgpa" : 8.50
+  }];
+  $scope.frdd = friends;
+    })
+  </script>
+</head>
+<body>
+   <div ng-controller="mycontroller">
+     {{msg}}
+   </div>
+   <br>
+   <br>
+   <br>
+   <div ng-controller="myaccess">
+    <table style="width: 500px; border:2px solid black;">
+      <thead>
+        <tr style="text-align: left;">
+          <th>Name</th>
+          <th>Enrollment</th>
+          <th>CGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="frd in frdd">
+          <td>{{frd.Name}}</td>
+          <td>{{frd.Enrollment}}</td>
+          <td>{{frd.cgpa}}</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope){
+            $scope.fname = "";
+            $scope.lname = "";
+            $scope.fullName = "";
+            $scope.getFullName = function(){
+            	$scope.fullName=$scope.fname+" "+$scope.lname;
+            };
+		});
+	</script>
+</head>
+<body ng-controller="myCtrl">
+	Enter the First Name: <input type="text" name="txtFanme" id="" ng-model="fname" required/>
+	<br>
+	Enter the Last Name: <input type="text" name="txtLName" ng-model="lname" required/>
+	<br>
+	<button ng-click="getFullName()">GET FULL NAME</button>
+	<hr/>
+	Full Name is *&nbsp;:<label ng-bind="fullName"></label>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="ajexApp">
+<head>
+	<title>First-Angular-Demo</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script>
+		angular.module("ajexApp",[])
+		.controller("myCtrl", function($scope,$htttp){
+             $scope.user = {
+             	fn : "",
+             	ln : ""
+             };
+             $scope.doSunmit = function(){
+                $http.get("",user)
+                .then(function(payload){
+                	$scope.message = payload.data.message;
+                } ,function(message){
+                	alert("Application has some ajax issue!");
+                });
+             };
+		});
+	</script>
+</head>
+<body>
+   Enter the text : <input type="text" ng-model="m"/>
+
+   View the text  : <label ng-bind="m" ng-init="m='label-content' "></label>
+</body>
+</html>

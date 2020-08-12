@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form validation in css classes</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+  <style>
+     input.ng-invalid{
+            background-color: lightblue;
+     }
+     input.ng-valid{
+             background-color: lawngreen;
+     }
+     form.ng-pristine{
+             background-color: lightgrey;
+     }
+     form.ng-dirty{
+             background-color: lightgreen; 
+     }
+  </style>
+</head>
+<body ng-app="">
+   <form name="myform">
+     <h2>My Data : </h2>
+     <input type="text" name="myFormd" ng-model="myName" placeholder="Enater your Value" id=""/ required="">
+   </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Nesting-Controller</title>
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		//In thet we can used Controller Alising
+		angular.module("myApp",[])
+		.controller("ctrl1", function($scope){
+			var c1 = this;
+			c1.msg = "CTRL1 MSG MODELS OBJ DATA";
+		})
+		.controller("ctrl2", function($scope){
+			//$scope.msg = "CTRL2 MSG MODELS OBJ DATA";
+		})
+		.controller("ctrl3", function($scope){
+			//$scope.msg = "CTRL3 MSG MODELS OBJ DATA";
+		})
+	</script>
+	<style>
+		div{
+			border: 1px solid lightgray;
+			padding: 17px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="ctrl1 as c1">
+		 CTRL1 MESSAGE : <input type="text" name="parentTxt1" id="" ng-model="c1.msg">
+		<div ng-controller="ctrl2">
+			 CTRL2 MESSAGE : <input type="text" name="parentTxt2" id="" ng-model="c1.msg"> 
+			<div ng-controller="ctrl3">
+		        CTRL3 MESSAGE : <input type="text" name="cildText" id="" ng-model="c1.msg">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

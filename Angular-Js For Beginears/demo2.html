@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hide/Enable-Disabled Demo</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+</head>
+<body>
+  <div ng-app="">
+  	<table border="0">
+  		<tr>
+  			<td><input type="checkbox" ng-model="enableDisableButton" name="" id="">Disable Button</td>
+  			<td><button ng-disabled="enableDisableButton">Click-me</button></td>
+  		</tr>
+  		<tr>
+  			<td><input type="checkbox" ng-model="showHide" name="" id="">Enable Buttton</td>
+  			<td><button ng-hide="showHide">click-me</button></td>
+  		</tr>
+  		<tr>
+  			<td><p>Total click : {{clickcounter}}</p></td>
+  			<td><button ng-click="clickcounter = clickcounter + 1">Click-me</button></td>
+  		</tr>
+  	</table>
+  </div>
+</body>
+</html>

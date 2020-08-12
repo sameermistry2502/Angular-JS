@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ajaxApp">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX-GET</title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script>
+			angular.module("ajaxApp", [])
+			.controller("myCtrl", function($scope,$http)
+			{
+                   $scope.studentss = [];
+                   $scope.getStudents = function()
+                   {
+                   	var url = "json/student.json";
+                   	//Ajex can be run on the https protocol.
+                   	  $http.get(url)
+                   	  .then(function(payload)
+                   	  {
+                   	  	$scope.studentss = payload.data;
+                   	  }, function(message)
+                   	  {
+                   	  	alert('we have ajax issues')
+                   	  });
+                   };
+			});
+		</script>
+</head>
+<body ng-controller="myCtrl">
+	<button ng-click="getStudents()">GET STUDENTS:</button>
+	<br>
+	<hr>
+	CILCK ON BUTTON TO GET'S A STUDENTS:
+	<br>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Enrollment</th>
+			<th>CGPA</th>
+		</tr>
+		<tr ng-repeat="s in studentss">
+			<td>{ {s.Enrollment} }</td>
+			<td>{ {s.Name} }</td>
+			<td>{ {s.cgpa} }</td>
+		</tr>
+	</table>
+</body>
+</html>

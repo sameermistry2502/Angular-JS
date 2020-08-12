@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular_math</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		    angular.module("mathApp", [])
+            .controller("mathCtrl",function($scope){
+                  $scope.a = 0;
+                  $scope.b = 0;
+
+                  $scope.result = 0;
+
+                  $scope.sum = function(){
+                  	$scope.result = $scope.a + $scope.b;
+                  };
+                  $scope.sub = function(){
+                  	$scope.result = $scope.a - $scope.b;
+                  };
+                  $scope.mul = function(){
+                  	$scope.result = $scope.a * $scope.b;
+                  };
+                  $scope.div = function(){
+                  	$scope.result = $scope.a / $scope.b;
+                  };
+            });
+		
+	</script>
+</head>
+<body ng-app="mathApp">
+   <div ng-controller="mathCtrl">
+	Enter the 1 Number : <input type="number" name="" ng-model="a" required>
+	<br>
+	<br>
+	Enter the 2 Number: <input type="number" name="" ng-model="b" required>
+	<br>
+	<button  ng-click="sum()">+</button> |
+	<button ng-click="sub()">-</button> |
+	<button ng-click="mul()">*</button> |
+	<button ng-click="div()">/</button>
+	<br>
+	<hr/>
+	RESULT : <label ng-bind="result"></label>
+   </div>
+</body>
+</html>

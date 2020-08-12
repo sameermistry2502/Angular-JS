@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Facebook</title>
+	 <style>
+	 	.top{
+	 		margin: 0px;
+	 		padding: 0px;
+	 		height: 80px;
+	 		background-color: #003d99;
+	 		color: #fff;
+
+	 	}
+	 	#id1{
+	 		font-family: sans-serif;
+	 		margin: 0px;
+	 		padding-left: 90px;
+	 		font-size: 30px;
+	 	}
+        .inner-top{
+        	margin-top: 0px;
+        	padding-top: 1px;
+        	padding-right: 80px;
+        	float: right;
+        }
+        .form{
+        	float: right;
+        	padding-right: 70px;
+        	height: 300px;
+        	width: 500px;
+        }
+        .bottom{
+        	float: left;
+        	margin: 0px;
+        	padding: 0px;
+        }
+       #box input[type="submit"]{
+    	background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #00cc00;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 6px;	
+        height: 40px;
+        width: 200px;
+        font-size: 25px;
+
+    }
+
+	 </style>
+    
+</head>
+<body>
+	<div class="top"><h1 id="id1">facebook</h1> 
+	  <div class="inner-top">
+	  	Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:<br/>
+		<input type="email" name="txtEmail" id="id2" required=""><input type="password" name="txtPass" id="id3" required="">&nbsp;<input type="submit" name="" value="login" style="color: white; background-color: #3333ff">
+	  </div>
+    </div>
+    <div class="form">
+    	<h1>Create an account</h1>
+        <h3>It's free aluways will available</h3>
+        <input type="text" name="txt" id="" placeholder="FirstName">&nbsp;<input type="text" name="" id="" placeholder="LastName" ng-model="user.FirstName"> 
+        <br><br>
+        <input type="text" name="" id="" placeholder="Mobileno and Email-Id" ng-model="user.Mobileno" required="" />
+        <br><br>
+        <input type="text" name="" id="" placeholder="New password" required="" ng-model="user.password">
+        <h5>Birthdate</h5>
+        <select name="date" id="" ng-model="user.Birthdate">
+        	<option value="">-</option>
+        	<option value="1">1</option>
+        	<option value="2">2</option>
+        	<option value="3">3</option>
+        	<option value="4">4</option>
+        	<option value="5">5</option>
+        	<option value="6">6</option>
+        	<option value="8">8</option>
+        	<option value="9">9</option>
+        	<option value="10">10</option>
+        	<option value="11">11</option>
+        	<option value="12">12</option>
+        	<option value="13">13</option>
+        	<option value="14">14</option>
+        	<option value="15">15</option>
+        	<option value="16">16</option>
+        	<option value="17">17</option>
+        	<option value="18">18</option>
+        	<option value="19">19</option>
+        	<option value="20">20</option>
+        	<option value="21">21</option>
+        	<option value="22">22</option>
+        	<option value="23">23</option>
+        	<option value="24">24</option>
+        	<option value="25">25</option>
+        	<option value="26">26</option>
+        	<option value="27">27</option>
+        	<option value="28">28</option>
+        	<option value="29">29</option>
+        	<option value="30">30</option>
+        </select>
+        &nbsp;
+        <select name="month" id="">
+        	<option value="">-</option>
+        	<option value="1">1</option>
+        	<option value="2">2</option>
+        	<option value="3">3</option>
+        	<option value="4">4</option>
+        	<option value="5">5</option>
+        	<option value="6">6</option>
+        	<option value="7">7</option>
+        	<option value="8">8</option>
+        	<option value="9">9</option>
+        	<option value="10">10</option>
+        	<option value="11">11</option>
+        	<option value="12">12</option>
+        </select>
+        &nbsp;
+        <select name="year" id="" ng-model="user.year">
+        	<option value="">-</option>
+        	<option value="1998">1998</option>
+        	<option value="1999">1999</option>
+        	<option value="2000">2000</option>
+        	<option value="2001">2001</option>
+        	<option value="2002">2002</option>
+        	<option value="2003">2003</option>
+        	<option value="2004">2004</option>
+        	<option value="2005">2005</option>
+        	<option value="2006">2006</option>
+        </select>
+        <h3>Gender</h3>
+        <input type="radio" name="textGender" id="" value="male" ng-model="user.male">Male <input type="radio" name="textGender" id="" value="female" value="female" ng-model="user.female">Female<br/><br>
+        <p ng-bind="em">By clicking Sign Up, you agree to our <a href="">Terms</a>, <a href="">Data Policy</a> and <a href="">Cookie Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
+        <br>
+        <div id="box"><input type="submit" name="submit" value="Sign In" ng-submit="doSubmit(user)"></div>
+        <br>
+        <p><a href="">Create Page </a>for celebrity band or business</p>
+    </div>
+    <div class="bottom"><img src="img/facebook-home-page.jpg" alt=""></div>
+
+</body>
+</html>

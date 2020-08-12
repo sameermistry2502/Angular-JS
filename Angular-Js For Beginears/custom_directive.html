@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<body ng-controller="myCtrl">
+
+	<meta charset="UTF-8">
+	<title>Custom-Directive</title>
+		<div my-dir></div>	
+	<script src="js/angular.js"></script>
+	<script>
+		angular.module("myApp", [])
+		.directive("myDir", function($compile){
+           var jsonObj = {};
+           jsonObj.restrict = "EA";
+           jsonObj.template = "<button ng-click='doSubmit()'>TempletclickMe</button><h2>Hello I am sameer    This is custom directive</h2>";
+           jsonObj.link = function(scope,ele,attr){
+           	    var myEle = angular.element("<button ng-click='doSubmit()'>LINK BUTTON</button>");
+                $compile(myEle) (scope);
+                ele.append(myEle);
+           };
+           return jsonObj;
+		})
+		.controller("myCtrl", function($scope){
+               $scope.doSubmit = function(){
+                 alert("this is do submit clicked");
+               };
+		});
+	</script>
+	
+</body>
+</html>

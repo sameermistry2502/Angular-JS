@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Expression-Demo</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+  <style>
+    .style1{
+      width: 500px;
+      color: blue;
+    }
+    .style2{
+      width: 124px;
+    }
+    #t1{
+      width: 144px;
+    }
+    #t2{
+      width: 144px;
+
+    }
+    #t3{
+      width: 124px;
+
+    }
+    #t4{
+      width: 57px;
+
+    }
+  </style>
+</head>
+<body>
+  <div ng-app="">
+  	<table border="0" class="style1">
+  		<tr>
+        <td class="style2">First Nmae</td>
+  			<td><input type="text" ng-model="FirstName" name="" id="t1"></td>
+
+  		</tr>
+  		<tr>
+        <td class="style2">Last Name</td>
+  			<td><input type="text" ng-model="LastName" name="" id="t2"></td>
+  		
+      </tr>
+  		<tr>
+        <td class="style2">Quality</td>
+        <td><input type="text" ng-model="Quality" name="" id="t3"></td>
+  		
+      </tr>
+      <tr>
+        <td class="style2">Cost</td>
+        <td><input type="text" ng-model="Cost" name="" id="t4"></td>
+      </tr>
+      <tr>
+        <td class="style2">
+        <input type="button" ng-click="msg = FirstName + '  '+ LastName + ' has pay   ' + Cost * Quality" value="click-here"/></td>
+        <td>{{msg}}</td>
+      </tr>
+  	</table>
+  </div>
+</body>
+</html>

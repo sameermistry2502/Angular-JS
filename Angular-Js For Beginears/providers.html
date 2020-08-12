@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Provider</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		angular.module("myApp", [])
+		/*what ever we are commented here it will be a provider implimenting with configuration*/
+		//var a = 0;
+		.provider("service",function(){
+			this.$get = function(){
+				var obj = {};
+				obj.sqare = function(a){
+                      return a * a;
+				};
+				obj.factorial = function(a){
+                       var result = 1;
+                       for(var i = a; i>0; i--){
+
+                       	  result *= i;
+                       }
+                       return result;
+				};
+				return obj;
+			};
+			//this.setKey = function(value){
+              //     a = value;
+			//};
+		})
+		//.config(function(serviceProvider){
+          //   serviceProvider.setKey(10);
+		//})
+		.controller("myCtrl",function($scope, service){
+             $scope.a = 0;
+             $scope.result = 0;
+             $scope.getSquare = function(a){
+             	
+               $scope.result = service.sqare(a);
+             };
+             $scope.getFactorial = function(a){
+               $scope.result = service.factorial(a);
+             };
+		})
+	</script>
+</head>
+<body ng-controller="myCtrl">
+	Enter the Number: <input type="number" name="" id="" ng-model="a"/>
+    <br>
+    <br>
+    <button ng-click="getSquare(a)">GET SQUARE</button> |
+    <button ng-click="getFactorial(a)">GET FACTORIAL</button>
+    <hr>
+    RESULT : {{result}}
+</body>
+</html>

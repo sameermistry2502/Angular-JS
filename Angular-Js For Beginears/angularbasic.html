@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function bind()
+		{
+			var input = document.getElementById('i');
+			var label = document.getElementById('v');
+			label.innerHTML = input.value;
+
+		};
+	</script>
+</head>
+<body>
+   Enter the text : <input type="text" name="txtDemo" id="i" onkeyup="bind()" />
+
+   View the text  : <label name="View" id="v"></label>
+</body>
+</html>

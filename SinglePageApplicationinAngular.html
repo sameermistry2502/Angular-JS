@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spaApp">
+<body>
+	<meta charset="UTF-8">
+	<title>Single-Page-App</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<script>
+		angular.module("spaApp", ["ngRoute"])
+		.config(function($routeProvider){
+			$routeProvider
+			.when("/register", {
+				templateUrl : "views/register.htm"
+			})
+			.when("/login", {
+				templateUrl : "views/login.htm"
+			})
+		})
+	</script>
+
+
+<div align="center">
+	<a href="#!/register">Registration</a>
+	<a href="#!/login">Login</a>
+</div>
+<br>
+<hr>
+<div ng-view align="center"></div>
+</body>
+</html>

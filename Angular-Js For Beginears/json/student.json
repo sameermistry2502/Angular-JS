@@ -1,0 +1,37 @@
+[
+	{
+      "Name" : "Sameer Mistry",
+      "Enrollment" : "161203116015",
+      "cgpa" : 8.30
+	},
+	{	
+      "Name" : "Hiral Thaker",
+      "Enrollment" : "161203116033",
+      "cgpa" : 8.88
+	},
+   	{
+      "Name" : "Sanjay Yadav",
+      "Enrollment" : "161203116034",
+      "cgpa" : 8.50
+	},
+    {
+      "Name" : "Pranjan Patel",
+      "Enrollment" : "161203116021",
+      "cgpa" : 7.30
+	},
+    {
+      "Name" : "Palak Sathvara",
+      "Enrollment" : "161203116026",
+      "cgpa": 7.30
+	},
+	{
+      "Name" : "Wilson Savalia",
+      "Enrollment" : "161203116027",
+      "cgpa" : 9.30
+	},
+	{
+      "Name" : "Sanyoni Shah",
+      "Enrollment" : "161203116028",
+      "cgpa" : 8.30
+	}
+];
